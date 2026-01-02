@@ -11,7 +11,7 @@ int main() {
         scanf("%s", input);   // string input
 
         if (strcmp(input, password) == 0) {
-            printf("Access Granted\n");
+            printf("Access Granted \n");
             break;
         } else {
             attempts--;
