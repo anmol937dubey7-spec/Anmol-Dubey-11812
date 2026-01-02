@@ -1,15 +1,16 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
-    int password = 1234;
-    int input;
+    char password[] = "Abc@123";   // string password (characters + digits)
+    char input[50];
     int attempts = 5;
 
     while (attempts > 0) {
-        printf("Enter your 4 digit password: ");
-        scanf("%d", &input);
+        printf("Enter your password: ");
+        scanf("%s", input);   // string input
 
-        if (input == password) {
+        if (strcmp(input, password) == 0) {
             printf("Access Granted\n");
             break;
         } else {
@@ -17,7 +18,7 @@ int main() {
             printf("Wrong Password\n");
 
             if (attempts > 0) {
-                printf("Re-enter your password, %d attempt left\n\n", attempts);
+                printf("Re-enter your password, %d attempt(s) left\n\n", attempts);
             }
         }
     }
@@ -28,4 +29,3 @@ int main() {
 
     return 0;
 }
-
